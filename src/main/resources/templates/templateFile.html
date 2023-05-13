@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+  <script src="/webjars/bootstrap/5.2.3/js/bootstrap.bundle.js"></script>
+  <link rel="stylesheet" href="/webjars/bootstrap-icons/1.10.4/font/bootstrap-icons.css">
+  <script src="/webjars/jquery/3.6.4/jquery/min.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/index}">
+      <i class="bi bi-hospital"></i>
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/index}">Accueil</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Patients
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" th:href="@{/formPatient}">Ajouter</a></li>
+            <li><a class="dropdown-item" th:href="@{/index}">Liste des patients</a></li>
+
+          </ul>
+        </li>
+      </ul>
+      <form class="get d-flex" th:action="@{index}">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" >
+        <button class="btn btn-outline-success" type="submit">Chercher</button>
+      </form>
+
+    </div>
+  </div>
+</nav>
+  <div layout:fragment="content">
+
+  </div>
+</body>
+</html>
